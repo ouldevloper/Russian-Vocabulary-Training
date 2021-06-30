@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>552</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>552</width>
+    <height>552</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>552</width>
+    <height>552</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>500 Comman Russian Verbs</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>534</width>
+      <height>534</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>534</width>
+      <height>534</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLineEdit" name="answer_word">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>500</y>
+        <width>481</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(154, 153, 150);
+border-radius:5px;
+margin-left:10px;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skip_word">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(245, 194, 17);
+
+</string>
+      </property>
+      <property name="text">
+       <string>x</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>381</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QLabel" name="info_word">
+         <property name="text">
+          <string>UNKNOW | Level 1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="help_foreign_word">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>380</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(98, 160, 234);
+
+</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_word">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>500</y>
+        <width>51</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>70</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(46, 194, 126);
+border-raduis:10px;
+color:white;
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>  C</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="help_native_word">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>260</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(98, 160, 234);
+
+</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>531</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="new_lang_word">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">margin:10px;
+background-color: rgb(153, 193, 241);
+border-radius: 10px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="native_lang_word">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(249, 240, 107);
+margin:10px;
+border-radius:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="new_lang_extra_word">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 163, 72);
+border-radius:10px;
+margin:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="native_lang_extra_word">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(246, 97, 81);
+border-radius:10px;
+margin:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+      <zorder>new_lang_extra_word</zorder>
+      <zorder>native_lang_word</zorder>
+      <zorder>native_lang_extra_word</zorder>
+     </widget>
+     <zorder>answer_word</zorder>
+     <zorder>layoutWidget_12</zorder>
+     <zorder>clear_word</zorder>
+     <zorder>layoutWidget_13</zorder>
+     <zorder>skip_word</zorder>
+     <zorder>help_foreign_word</zorder>
+     <zorder>help_native_word</zorder>
+    </widget>
+    <widget class="QWidget" name="stackedWidgetPage1">
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>531</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="new_lang">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">margin:10px;
+background-color: rgb(153, 193, 241);
+border-radius: 10px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="new_lang_extra">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(249, 240, 107);
+margin:10px;
+border-radius:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="native_lang_verb">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 163, 72);
+border-radius:10px;
+margin:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="foreing_lang_verb">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(246, 97, 81);
+border-radius:10px;
+margin:10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="help_native">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>260</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(98, 160, 234);
+
+</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>500</y>
+        <width>51</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>70</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(46, 194, 126);
+border-raduis:10px;
+color:white;
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>  C</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skip">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(245, 194, 17);
+
+</string>
+      </property>
+      <property name="text">
+       <string>x</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="answer">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>500</y>
+        <width>481</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(154, 153, 150);
+border-radius:5px;
+margin-left:10px;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="help_foreign">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>380</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 16pt &quot;Cantarell&quot;;
+background-color: rgb(98, 160, 234);
+
+</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>381</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="info">
+         <property name="text">
+          <string>UNKNOW | Level 1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="stackedWidgetPage2">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>50</y>
+        <width>521</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Language Settings</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>100</y>
+         <width>331</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>  Native Lnaguage</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="foreign_lang">
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+border:                 none;
+background-color:   rgb(87, 96, 134);
+color:                      rgb(255, 255, 255);
+font-weight:            bold;
+padding:                    5px; 
+border-radius:0px;
+}
+
+QComboBox::drop-down{
+    border:                 none;
+    background-color:   rgb(87, 96, 134);
+    color:                     black;
+    font-weight:            bold;
+    padding:                    10px;
+}
+
+QComboBox::down-arrow{ 
+   padding-right:          5px;
+}
+
+
+
+
+
+</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>en</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fr</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ru</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>50</y>
+         <width>331</width>
+         <height>53</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>  Native Lnaguage</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="native_lang">
+          <property name="styleSheet">
+           <string notr="true">QComboBox{
+border:                 none;
+background-color:   rgb(87, 96, 134);
+color:                      rgb(255, 255, 255);
+font-weight:            bold;
+padding:                    5px; 
+border-radius:0px;
+margin:0px;
+}
+
+QComboBox::drop-down{
+    border:                 none;
+    background-color:   rgb(87, 96, 134);
+    color:                     black;
+    font-weight:            bold;
+    padding:                    10px;
+}
+
+QComboBox::down-arrow{ 
+   padding-right:          5px;
+}
+
+
+
+
+
+</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>en</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fr</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ru</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="save_lang">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>150</y>
+         <width>111</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#007fff;</string>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>270</y>
+        <width>521</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-bottom-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="title">
+       <string>User Settings</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>90</y>
+         <width>331</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>  words/run</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="words_run">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:   rgb(87, 96, 134);
+color:                      rgb(255, 255, 255);
+border-radius:0px;
+margin:0x;
+padding:0px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>331</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>  Nick name</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="nickname">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:   rgb(87, 96, 134);
+color:                      rgb(255, 255, 255);
+border-radius:0px;
+margin:0x;
+padding:0px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="save_user">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>140</y>
+         <width>111</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#007fff;</string>
+       </property>
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>533</y>
+        <width>527</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>-1</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="back">
+       <property name="styleSheet">
+        <string notr="true">QPushButto{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+border:none;
+
+}
+QPushButto:pressed{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+}
+QPushButto:hover{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+}</string>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="next">
+       <property name="styleSheet">
+        <string notr="true">QPushButto{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+border:none;
+
+}
+QPushButto:pressed{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+}
+QPushButto:hover{
+color:white;
+background-color: rgb(61, 56, 70);
+margin:0px;
+padding:0px;
+}</string>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
