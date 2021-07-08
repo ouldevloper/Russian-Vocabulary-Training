@@ -295,13 +295,13 @@ margin:10px;</string>
       <zorder>native_lang_word</zorder>
       <zorder>native_lang_extra_word</zorder>
      </widget>
-     <zorder>answer_word</zorder>
      <zorder>layoutWidget_12</zorder>
      <zorder>clear_word</zorder>
      <zorder>layoutWidget_13</zorder>
      <zorder>skip_word</zorder>
      <zorder>help_foreign_word</zorder>
      <zorder>help_native_word</zorder>
+     <zorder>answer_word</zorder>
     </widget>
     <widget class="QWidget" name="stackedWidgetPage1">
      <widget class="QWidget" name="layoutWidget">

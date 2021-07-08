@@ -20,9 +20,9 @@ class Word(object):
         con = sqlite3.connect(f"{path}/db.db")
         cur = con.cursor()
         sql = f"""
-                select * from word where 
-                (point<100 and  cast(julianday('now')-julianday(last_time) as INTEGER)<6)or
-                ((((point/100)*100)+100)>point and point>100 and
+               select * from word where 
+                (point<100 )or
+                (point between 100 and (((point/100)*100)+100) and
                 cast(julianday('now')-julianday(last_time) as INTEGER)>=6)
                 limit {self.limit}
                 """
@@ -49,7 +49,7 @@ class Word(object):
         path = f"{os.sep}".join(os.path.realpath(__file__).split(os.sep)[:-1])
         con = sqlite3.connect(f"{path}/db.db")
         cur = con.cursor()
-        sql = f"""select u.user,sum(w.point)/500+1 from word w,user u"""
+        sql = f"""select u.user,sum(w.point)/50000+1 from word w,user u"""
         try:
             ret = cur.execute(sql).fetchone()
         except sqlite3.Error: pass

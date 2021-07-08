@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from os import error, times
+from posixpath import join
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 import random
@@ -525,6 +526,7 @@ class Ui_MainWindow(object):
                 self.foreing    = None
                 self.user       = None
                 self.word_count = None
+                self.word_info  = []
 
                 self.next.clicked.connect(self.next_clicked)
                 self.back.clicked.connect(self.back_clicked)
@@ -559,6 +561,7 @@ class Ui_MainWindow(object):
                         self.stackedWidget.setCurrentIndex(self.stackedWidget.currentIndex()-1)
                 else:
                         self.stackedWidget.setCurrentIndex(2)
+        
         def init_settings(self):
                 user = User()
                 sett = Settings()
@@ -581,30 +584,35 @@ class Ui_MainWindow(object):
                 self.foreing = sett.foreing_lang
                 sett.update()
                 self.init()
+        
         def clear_clicked(self):
                 self.answer.clear()
         def init(self):  
                 self.clear_clicked()  
+                self.new_lang.clear()
+                self.new_lang_extra.clear()
+                self.native_lang_verb.clear()
+                self.foreing_lang_verb.clear()
                 self.verb = verb(self.word_count)
                 info = verb.get_level()
                 self.info.setText(f"{info[0]} | Level {info[1]}")
                 ru_0=self.verb.ru_verb
                 ru_1 = self.verb.ru_complete_verb.split(";")
                 native_lang = [ver[2] for ver in lang(self.native,self.verb.id).get()]
-                foreing_lang =[ver[2] for ver in lang(self.foreing,self.verb.id).get()]     
-                if int(self.verb.point)<250:
-                        if int(self.verb.point)<=100:
-                                self.new_lang.setText(ru_0)
-                                self.new_lang_extra.setText(" / ".join(ru_1))
-                                self.native_lang_verb.setText("/".join(native_lang))
-                                self.foreing_lang_verb.setText("/".join(foreing_lang))
-                        else:
-                                self.ru_verb.setText(ru_0)
-                                self.new_lang_extra.setText(" / ".join(ru_1))
-                        self.answers = native_lang+foreing_lang   
-                else:
+                foreing_lang =[ver[2] for ver in lang(self.foreing,self.verb.id).get()] 
+                if int(self.verb.point)<100:
+                        #if int(self.verb.point)<=100:
+                        self.new_lang.setText(ru_0)
+                        self.new_lang_extra.setText(" / ".join(ru_1))
                         self.native_lang_verb.setText("/".join(native_lang))
                         self.foreing_lang_verb.setText("/".join(foreing_lang))
+                        #else:
+                        #        self.ru_verb.setText(ru_0)
+                        #        self.new_lang_extra.setText(" / ".join(ru_1))
+                        self.answers = native_lang+foreing_lang   
+                else:
+                        self.new_lang.setText("/".join(native_lang))
+                        self.new_lang_extra.setText("/".join(foreing_lang))
                         self.answers = ru_1
         def clicked_submit(self):
                 answer = self.answer.text()
@@ -618,19 +626,23 @@ class Ui_MainWindow(object):
                 #        self.verb.update()   
                         self.init()
         def skipclicked(self):
-                self.verb.point = int(self.verb.point)+100
+                self.verb.point = ((int(self.verb.point)//100)*100)+100
                 self.verb.last_date = str(datetime.datetime.now())[:10]
                 self.verb.update()
                 self.clear_clicked()
                 self.init()
         def help_native_clicked(self):
-                native_lang = [ver[2] for ver in lang(self.native,self.verb.id).get()]
-                self.native_lang_verb.setText("/".join(native_lang))
+                self.native_lang_verb.setText("/".join(self.verb.ru_verb.split(',')))
         def help_foreign_clicked(self):
-                foreing_lang =[ver[2] for ver in lang(self.foreing,self.verb.id).get()]
-                self.foreing_lang_verb.setText("/".join(foreing_lang))
+                self.foreing_lang_verb.setText("/".join(self.verb.ru_complete_verb.split(',')))
 
         def init_word(self):
+                self.new_lang_word.clear()
+                self.native_lang_word.clear()
+                self.new_lang_extra_word.clear()
+                self.native_lang_extra_word.clear()
+                #self.native_lang_word.setHidden(True)
+                #self.native_lang_extra_word.setHidden(True)
                 self.word = Word(self.word_count)
                 trans_word = Word_trans(0,self.word.id)
                 info = self.word.get_info()
@@ -641,33 +653,32 @@ class Ui_MainWindow(object):
                 new_lang_extra          = self.word.extra.split(";")
                 native_lang_extra       = trans_word.extra.split(";")  
 
-                if int(self.word.point)<250:
-                        if int(self.word.point)<=100:
-                                self.new_lang_word.setText(", ".join(new_lang))
-                                self.native_lang_word.setText(", ".join(native_lang))
-                                self.new_lang_extra_word.setText(" | ".join(new_lang_extra))
-                                self.native_lang_extra_word.setText(" | ".join(native_lang_extra))
-                                
-                        else:
-                                self.new_lang_word.setText(", ".join(new_lang))
-                                self.new_lang_extra_word.setText(" | ".join(new_lang_extra))
-                        self.word_answers = native_lang+native_lang_extra 
-                else:
+                if int(self.word.point)<100:
+                        #if int(self.word.point)<=100:
+                        self.new_lang_word.setText(", ".join(new_lang))
                         self.native_lang_word.setText(", ".join(native_lang))
+                        self.new_lang_extra_word.setText(" | ".join(new_lang_extra))
+                        self.native_lang_extra_word.setText(" | ".join(native_lang_extra)) 
+                        #else:
+                        #        self.new_lang_word.setText(", ".join(new_lang))
+                        #        self.new_lang_extra_word.setText(" | ".join(new_lang_extra))
+                        self.word_answers = native_lang+["|"]+native_lang_extra 
+                else:
+                        self.new_lang_word.setText(", ".join(native_lang))
                         self.native_lang_word.setText(" | ".join(native_lang_extra))
-                        self.word_answers = native_lang+native_lang_extra
+                        self.word_answers = new_lang+["|"]+new_lang_extra
                 self.answer.clear()
         def clear_word_clicked(self):
                 self.answer_word.clear()
         def skip_word_clicked(self):
-                self.word.point = (int(self.word.point)/100)*100+100
+                self.word.point = (int(self.word.point)//100)*100+100
                 self.word.update()
                 self.init_word()
                 self.clear_word_clicked()
         def help_native_word_clicked(self):
-                pass#self.new_lang_extra_word.setText("")
+                self.new_lang_extra_word.setText("".join(self.word_answers).split("|")[0])
         def help_foreign_word_clicked(self):
-                pass#self.native_lang_extra_word.setText("")
+                self.native_lang_extra_word.setText("".join(self.word_answers).split("|")[1])
         def answer_word_pressed(self):
                 answer = self.answer_word.text()
                 if answer in self.word_answers and self.word:
@@ -675,6 +686,10 @@ class Ui_MainWindow(object):
                         self.word.last_time = str(datetime.datetime.now())[:10]
                         self.word.update()
                         self.init_word() 
+                elif self.native_lang_extra_word.text()=="" or self.new_lang_extra_word.text()=="":
+                        self.native_lang_extra_word.setText("".join(self.word_answers).split("|")[1])
+                        self.new_lang_extra_word.setText("".join(self.word_answers).split("|")[0])
+
 
 
 if __name__ == "__main__":
